@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "45e80a58-8048-41dd-af2f-738ccb187746",
+		"name": "SIGECI CV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22121481"
+	},
+	"item": [
+		{
+			"name": "Toma_Turno",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://covid-sigeci-qa.gcba.gob.ar/gestorcitas/app/rest/frontservices/fechasdisp?servicioId=3771&fromDate=2022-09-14",
+					"protocol": "https",
+					"host": [
+						"covid-sigeci-qa",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"gestorcitas",
+						"app",
+						"rest",
+						"frontservices",
+						"fechasdisp"
+					],
+					"query": [
+						{
+							"key": "servicioId",
+							"value": "3771"
+						},
+						{
+							"key": "fromDate",
+							"value": "2022-09-14"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta_sede",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://covid-sigeci-qa.gcba.gob.ar/gestorcitas/app/rest/frontservices/sedes/ubicacion?fromDate=2022-09-14&latitud=1&longitud=1&servicioId=3771&toDate=2022-09-20",
+					"protocol": "https",
+					"host": [
+						"covid-sigeci-qa",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"gestorcitas",
+						"app",
+						"rest",
+						"frontservices",
+						"sedes",
+						"ubicacion"
+					],
+					"query": [
+						{
+							"key": "fromDate",
+							"value": "2022-09-14",
+							"description": "Desde esta fecha"
+						},
+						{
+							"key": "latitud",
+							"value": "1"
+						},
+						{
+							"key": "longitud",
+							"value": "1"
+						},
+						{
+							"key": "servicioId",
+							"value": "3771"
+						},
+						{
+							"key": "toDate",
+							"value": "2022-09-20",
+							"description": "Hasta esta fecha"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta_Dia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://covid-sigeci-qa.gcba.gob.ar/gestorcitas/app/rest/frontservices/horasdisp?day=2022-09-14&sedeId=3274&servicioId=3771",
+					"protocol": "https",
+					"host": [
+						"covid-sigeci-qa",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"gestorcitas",
+						"app",
+						"rest",
+						"frontservices",
+						"horasdisp"
+					],
+					"query": [
+						{
+							"key": "day",
+							"value": "2022-09-14",
+							"description": "Usar un dia despues de la fecha presente"
+						},
+						{
+							"key": "sedeId",
+							"value": "3274"
+						},
+						{
+							"key": "servicioId",
+							"value": "3771"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bloqueo_Turno",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Permite tomar el valor del token generado del JSON en una variable de ambiente//\r",
+							"bodyToken = JSON.parse(responseBody)\r",
+							"TokenValue = bodyToken.token\r",
+							"console.log(TokenValue)\r",
+							"pm.environment.set(\"TokenValue\", TokenValue);\r",
+							"//Valida estatus code 200//\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//Valida que el token generado sea tipo string//\r",
+							"pm.test (\"Token se ha generado correctamente en forma de String\"), function () {\r",
+							"    pm.expect(pm.response.text()).to.include(String);\r",
+							"};"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fecha\": \"2022-09-14T13:00:00.000\",\r\n  \"idPrestacion\": 3771,\r\n  \"idSede\": 3274\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://covid-sigeci-qa.gcba.gob.ar/gestorcitas/app/rest/frontservices/bloqueos",
+					"protocol": "https",
+					"host": [
+						"covid-sigeci-qa",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"gestorcitas",
+						"app",
+						"rest",
+						"frontservices",
+						"bloqueos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apartar_turno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"aceptaSms\": false,\r\n  \"apellido\": \"Argento\", \r\n  \"codigoOperadoraSms\": \"28\",\r\n  \"confirmacionEmail\": true,\r\n  \"datosContactoModificados\": true,\r\n  \"email\": \"noposee@noposee.com\",\r\n  \"fechaNacimiento\": \"1986-01-24\",\r\n  \"genero\": \"Masculino\",\r\n  \"nombre\": \"Jose\",\r\n  \"numDoc\": \"88888888\",\r\n  \"origenCita\": \"SIN_MIBA\",\r\n  \"telefono\": \"1122334455\",\r\n  \"tipoDoc\": \"DNI\",\r\n  \"tokenBloqueo\": \"{{TokenValue}}\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://covid-sigeci-qa.gcba.gob.ar/gestorcitas/app/rest/frontservices/citas",
+					"protocol": "https",
+					"host": [
+						"covid-sigeci-qa",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"gestorcitas",
+						"app",
+						"rest",
+						"frontservices",
+						"citas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

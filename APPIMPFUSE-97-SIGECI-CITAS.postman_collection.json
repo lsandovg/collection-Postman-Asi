@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "83fc31de-80ec-426f-bddf-d2ef26d0c4a8",
+		"name": "APPIMPFUSE-97-SIGECI-CITAS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22121481"
+	},
+	"item": [
+		{
+			"name": "sedes",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"//sigeci-citas-api-arquitectura-fuse-qa.apps.ocp4-dev.gcba.gob.ar/api/sedes\r",
+							"//idOrganismo \r",
+							"//idPrestacion"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "sigeci-citas-api-arquitectura-fuse-qa.apps.ocp4-dev.gcba.gob.ar/api/sedes?idOrganismo=5187&idPrestacion=6166",
+					"host": [
+						"sigeci-citas-api-arquitectura-fuse-qa",
+						"apps",
+						"ocp4-dev",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"api",
+						"sedes"
+					],
+					"query": [
+						{
+							"key": "idOrganismo",
+							"value": "5187",
+							"description": "Centro de vacunación"
+						},
+						{
+							"key": "idPrestacion",
+							"value": "6166"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sedes/{idSede}/citas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "sigeci-citas-api-arquitectura-fuse-qa.apps.ocp4-dev.gcba.gob.ar/api/sedes/6774/Citas?fechaCita=2022-10-04&estadoCita=Reservada",
+					"host": [
+						"sigeci-citas-api-arquitectura-fuse-qa",
+						"apps",
+						"ocp4-dev",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"api",
+						"sedes",
+						"6774",
+						"Citas"
+					],
+					"query": [
+						{
+							"key": "fechaCita",
+							"value": "2022-10-04",
+							"description": "Fecha en Formato YYYY-MM-dd"
+						},
+						{
+							"key": "estadoCita",
+							"value": "Reservada"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SEDES-idSede-tramites-idtramites",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sigeci-citas-api-arquitectura-fuse-qa.apps.ocp4-dev.gcba.gob.ar/api/sedes/6774/tramites/6166/citas?fechaCita=2022-10-04&estadoCita=Reservada",
+					"protocol": "http",
+					"host": [
+						"sigeci-citas-api-arquitectura-fuse-qa",
+						"apps",
+						"ocp4-dev",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"api",
+						"sedes",
+						"6774",
+						"tramites",
+						"6166",
+						"citas"
+					],
+					"query": [
+						{
+							"key": "fechaCita",
+							"value": "2022-10-04",
+							"description": "Fecha en Formato YYYY-MM-dd"
+						},
+						{
+							"key": "estadoCita",
+							"value": "Reservada"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ciudadano",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://sigeci-citas-api-arquitectura-fuse-qa.apps.ocp4-dev.gcba.gob.ar/api/ciudadanos/citas?tipoDocumento=Dni_ext&numeroDocumento=8000060527",
+					"protocol": "http",
+					"host": [
+						"sigeci-citas-api-arquitectura-fuse-qa",
+						"apps",
+						"ocp4-dev",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"api",
+						"ciudadanos",
+						"citas"
+					],
+					"query": [
+						{
+							"key": "tipoDocumento",
+							"value": "Dni_ext"
+						},
+						{
+							"key": "numeroDocumento",
+							"value": "8000060527"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

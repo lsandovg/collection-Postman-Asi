@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "deed4d6b-25bf-40b6-aee9-77278965419d",
+		"name": "APPRERESU-613",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22121481"
+	},
+	"item": [
+		{
+			"name": "APi-GCBA-GET-PDF-by-Cuil",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "9ba5db38",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "f8aba6a3dd8d5b1b6e1b85ea92d88d74",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://recibosdesueldo-api-hml.gcba.gob.ar/public/getPDFByCuil/4747477/20-27309039-9",
+					"protocol": "https",
+					"host": [
+						"recibosdesueldo-api-hml",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"public",
+						"getPDFByCuil",
+						"4747477",
+						"20-27309039-9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "APi-GCBA-GET-PDF-by-Cuil Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "9ba5db38",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "f8aba6a3dd8d5b1b6e1b85ea92d88d74",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://recibosdesueldo-api-hml.gcba.gob.ar/public/getPDFByCuil/4747477/20-27309039-9",
+					"protocol": "https",
+					"host": [
+						"recibosdesueldo-api-hml",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"public",
+						"getPDFByCuil",
+						"4747477",
+						"20-27309039-9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "APi-GCBA-GET-PDF-by-Cuil Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "awsv4"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "9ba5db38",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "f8aba6a3dd8d5b1b6e1b85ea92d88d74",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://recibosdesueldo-api-hml.gcba.gob.ar/public/getPDFByCuil/5325501/20-14610182-9",
+					"protocol": "https",
+					"host": [
+						"recibosdesueldo-api-hml",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"public",
+						"getPDFByCuil",
+						"5325501",
+						"20-14610182-9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

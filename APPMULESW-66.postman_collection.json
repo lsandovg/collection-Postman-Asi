@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "940946d4-a89c-4f61-aeb2-8019296fcd9d",
+		"name": "APPMULESW-66",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22121481"
+	},
+	"item": [
+		{
+			"name": "Colectivos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apitransporte-qa.gcba.gob.ar/colectivos/feed-gtfs?client_id=331f3765903f42748203881a29bcc195&client_secret=16C340Fd53D343749ec70BfaD94A67B7",
+					"protocol": "https",
+					"host": [
+						"apitransporte-qa",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"colectivos",
+						"feed-gtfs"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "331f3765903f42748203881a29bcc195"
+						},
+						{
+							"key": "client_secret",
+							"value": "16C340Fd53D343749ec70BfaD94A67B7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "feed-gtfs-frequency",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Estacionamiento",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apitransporte-qa.gcba.gob.ar/colectivos/vehiclePositions?client_secret=16C340Fd53D343749ec70BfaD94A67B7&client_id=331f3765903f42748203881a29bcc195",
+					"protocol": "https",
+					"host": [
+						"apitransporte-qa",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"colectivos",
+						"vehiclePositions"
+					],
+					"query": [
+						{
+							"key": "client_secret",
+							"value": "16C340Fd53D343749ec70BfaD94A67B7"
+						},
+						{
+							"key": "client_id",
+							"value": "331f3765903f42748203881a29bcc195"
+						},
+						{
+							"key": "Trip",
+							"value": "107253-1",
+							"description": "Funciona",
+							"disabled": true
+						},
+						{
+							"key": "agency_id",
+							"value": "55",
+							"description": "Funciona",
+							"disabled": true
+						},
+						{
+							"key": "route_id",
+							"value": "1577",
+							"description": "Funciona",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "colectivos-vehiclePositionsSimple",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://apitransporte-qa.gcba.gob.ar/colectivos/vehiclePositionsSimple?client_id=331f3765903f42748203881a29bcc195&client_secret=16C340Fd53D343749ec70BfaD94A67B7",
+					"protocol": "https",
+					"host": [
+						"apitransporte-qa",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"colectivos",
+						"vehiclePositionsSimple"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "331f3765903f42748203881a29bcc195"
+						},
+						{
+							"key": "client_secret",
+							"value": "16C340Fd53D343749ec70BfaD94A67B7"
+						},
+						{
+							"key": "route_id",
+							"value": "1577",
+							"description": "FUNCIONA",
+							"disabled": true
+						},
+						{
+							"key": "agency_id",
+							"value": "68",
+							"description": "NO FUNCIONA",
+							"disabled": true
+						},
+						{
+							"key": "Trip",
+							"value": "107253-1",
+							"description": "TIP-ID",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "colectivos-serviceAlerts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://apitransporte-qa.gcba.gob.ar/colectivos/serviceAlerts?client_id=331f3765903f42748203881a29bcc195&client_secret=16C340Fd53D343749ec70BfaD94A67B7",
+					"protocol": "https",
+					"host": [
+						"apitransporte-qa",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"colectivos",
+						"serviceAlerts"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "331f3765903f42748203881a29bcc195"
+						},
+						{
+							"key": "client_secret",
+							"value": "16C340Fd53D343749ec70BfaD94A67B7"
+						},
+						{
+							"key": "route_id",
+							"value": "1577",
+							"description": "FUNCIONA",
+							"disabled": true
+						},
+						{
+							"key": "agency_id",
+							"value": "79",
+							"description": "NO FUNCIONA",
+							"disabled": true
+						},
+						{
+							"key": "Trip",
+							"value": "107253-1",
+							"description": "TIP-ID",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

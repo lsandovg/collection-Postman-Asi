@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "01e3748e-b110-4de2-8c7e-7659a8431bec",
+		"name": "ApitentesBP1 2463-2464",
+		"description": "Mulesoft:\n\n[https://anypoint.mulesoft.com/exchange/083c0681-d272-40f7-b1ff-90dd5952a0de/transporte-admin-api/minor/1.0/](https://anypoint.mulesoft.com/exchange/083c0681-d272-40f7-b1ff-90dd5952a0de/transporte-admin-api/minor/1.0/)\n\nFalta determinar cual es el campo responsable en Post Clientes, y que respuesta debe dar Credenciales",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25267776"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{secret}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/transporte/v1/administracion/clientes?limit=2&Integer=1000&offset=0",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"transporte",
+						"v1",
+						"administracion",
+						"clientes"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "Integer",
+							"value": "1000"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Clientes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{secret}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"MiApp111.com\",\r\n  \"correo\": \"1234567890\",\r\n  \"confirmacion_correo\": \"1234567890\",\r\n  \"institucion\": \"institucion Uno\",\r\n  \"responsable\": \"Mariano Mariano\",\r\n  \"aplicacion\": \"Nombre de la aplicacion\",\r\n  \"descripcion\": \"Descripción de mi applicación.\",\r\n  \"uso_previsto\": \"Proveer info de transito.\",\r\n  \"plataforma_destino\": \"MiAppPortal.com\",\r\n  \"publico_objetivo\": \"Publico General\",\r\n  \"usuarios_x_mes\": 300\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/transporte/v1/administracion/clientes",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"transporte",
+						"v1",
+						"administracion",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Credenciales",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{secret}}",
+						"type": "text"
+					},
+					{
+						"key": "correo",
+						"value": "mail@mail.com",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"correo\": \"1234567890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/transporte/v1/administracion/credenciales",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"transporte",
+						"v1",
+						"administracion",
+						"credenciales"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://apitransporte-qa.gcba.gob.ar",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": "38fcce447d4d4ed79a92026fa0706970",
+			"type": "string"
+		},
+		{
+			"key": "secret",
+			"value": "95a694479fE142E189dBE27a5b721757",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "09ab6202-b01a-44cc-81b4-506d1d3e0b1f",
+		"name": "APINTESBP1-2466",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22121481"
+	},
+	"item": [
+		{
+			"name": "SUBTES",
+			"item": [
+				{
+					"name": "Subtes-FEED-GTFS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_servicio}}/subtes/feed-gtfs?client_id={{client_id}}&client_secret={{client_secret}}",
+							"host": [
+								"{{url_servicio}}"
+							],
+							"path": [
+								"subtes",
+								"feed-gtfs"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{client_id}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subtes-FORCASTGTFS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_servicio}}/subtes/forecastGTFS?client_id={{client_id}}&client_secret={{client_secret}}",
+							"host": [
+								"{{url_servicio}}"
+							],
+							"path": [
+								"subtes",
+								"forecastGTFS"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{client_id}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subte-SERVICE-ALERT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_servicio}}/subtes/serviceAlerts?client_id={{client_id}}&client_secret={{client_secret}}&json=1",
+							"host": [
+								"{{url_servicio}}"
+							],
+							"path": [
+								"subtes",
+								"serviceAlerts"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{client_id}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}"
+								},
+								{
+									"key": "json",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "COLECTIVOS",
+			"item": [
+				{
+					"name": "COLECTIVOS-FEED-GTFS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_servicio}}/colectivos/feed-gtfs?client_secret={{client_secret}}&client_id={{client_id}}",
+							"host": [
+								"{{url_servicio}}"
+							],
+							"path": [
+								"colectivos",
+								"feed-gtfs"
+							],
+							"query": [
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "COLECTIVOS-FEED-GTFS-FREQUENCY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_servicio}}/colectivos/feed-gtfs-frequency?client_secret={{client_secret}}&client_id={{client_id}}",
+							"host": [
+								"{{url_servicio}}"
+							],
+							"path": [
+								"colectivos",
+								"feed-gtfs-frequency"
+							],
+							"query": [
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "COLECTIVOS-VEHICLE-POSITIONS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_servicio}}/colectivos/vehiclePositions?client_secret={{client_secret}}&client_id={{client_id}}",
+							"host": [
+								"{{url_servicio}}"
+							],
+							"path": [
+								"colectivos",
+								"vehiclePositions"
+							],
+							"query": [
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}"
+								},
+								{
+									"key": "json ",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "agency_id ",
+									"value": "88",
+									"disabled": true
+								},
+								{
+									"key": "route_id",
+									"value": "1752",
+									"disabled": true
+								},
+								{
+									"key": "Trip",
+									"value": "118058",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "COLECTIVOS-VEHICLE-POSITIONS-SIMPLE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_servicio}}/colectivos/vehiclePositionsSimple?client_id={{client_id}}&client_secret={{client_secret}}&route_id=1760&Trip =118661-1",
+							"host": [
+								"{{url_servicio}}"
+							],
+							"path": [
+								"colectivos",
+								"vehiclePositionsSimple"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{client_id}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}"
+								},
+								{
+									"key": "route_id",
+									"value": "1760"
+								},
+								{
+									"key": "Trip ",
+									"value": "118661-1"
+								},
+								{
+									"key": "agency_id",
+									"value": "70",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "COLECTIVOS-SERVICE-ALERTS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_servicio}}/colectivos/serviceAlerts?json=1&agency_id=1901&route_id=1758&Trip=118468-1&client_secret={{client_secret}}&client_id={{client_id}}",
+							"host": [
+								"{{url_servicio}}"
+							],
+							"path": [
+								"colectivos",
+								"serviceAlerts"
+							],
+							"query": [
+								{
+									"key": "json",
+									"value": "1"
+								},
+								{
+									"key": "agency_id",
+									"value": "1901"
+								},
+								{
+									"key": "route_id",
+									"value": "1758"
+								},
+								{
+									"key": "Trip",
+									"value": "118468-1"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ECOBICI",
+			"item": [
+				{
+					"name": "ECOBICI-GBFS-SYSTEMINFORMATION",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_servicio}}/ecobici/gbfs/systemInformation?client_secret={{client_secret}}&client_id={{client_id}}",
+							"host": [
+								"{{url_servicio}}"
+							],
+							"path": [
+								"ecobici",
+								"gbfs",
+								"systemInformation"
+							],
+							"query": [
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ECOBICI-GBFS-STATIONSTATUS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_servicio}}/ecobici/gbfs/stationStatus?client_secret={{client_secret}}&client_id={{client_id}}",
+							"host": [
+								"{{url_servicio}}"
+							],
+							"path": [
+								"ecobici",
+								"gbfs",
+								"stationStatus"
+							],
+							"query": [
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ECOBICI-STATION-INFORMATION",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_servicio}}/ecobici/gbfs/stationInformation?client_secret={{client_secret}}&client_id={{client_id}}",
+							"host": [
+								"{{url_servicio}}"
+							],
+							"path": [
+								"ecobici",
+								"gbfs",
+								"stationInformation"
+							],
+							"query": [
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}"
+								},
+								{
+									"key": "json ",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "agency_id ",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

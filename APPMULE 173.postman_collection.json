@@ -1,0 +1,464 @@
+{
+	"info": {
+		"_postman_id": "49af54b0-08d6-4abd-ad26-50a0ca4db68a",
+		"name": "APPMULE 173",
+		"description": "Mulesoft: [https://anypoint.mulesoft.com/exchange/083c0681-d272-40f7-b1ff-90dd5952a0de/datos_movilidad/minor/1.0/console/method/#100/](https://anypoint.mulesoft.com/exchange/083c0681-d272-40f7-b1ff-90dd5952a0de/datos_movilidad/minor/1.0/console/method/#100/)  \n\nHace falta tener el ambiente de QA y el client id y secret que se insertan como variable en la Colección.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22121481"
+	},
+	"item": [
+		{
+			"name": "Movilidad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{secret}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apitransporte.buenosaires.gob.ar/movilidad",
+					"protocol": "https",
+					"host": [
+						"apitransporte",
+						"buenosaires",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"movilidad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transito",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{secret}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apitransporte.buenosaires.gob.ar/movilidad/transito",
+					"protocol": "https",
+					"host": [
+						"apitransporte",
+						"buenosaires",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"movilidad",
+						"transito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transito Mensual",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{secret}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apitransporte.buenosaires.gob.ar/movilidad/transito/mensual",
+					"protocol": "https",
+					"host": [
+						"apitransporte",
+						"buenosaires",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"movilidad",
+						"transito",
+						"mensual"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transito Mensual x Año",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{secret}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apitransporte.buenosaires.gob.ar/movilidad/transito/mensual/{anioMes}",
+					"protocol": "https",
+					"host": [
+						"apitransporte",
+						"buenosaires",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"movilidad",
+						"transito",
+						"mensual",
+						"{anioMes}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Semana Tipica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{secret}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apitransporte.buenosaires.gob.ar/movilidad/transito/semanaTipica",
+					"protocol": "https",
+					"host": [
+						"apitransporte",
+						"buenosaires",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"movilidad",
+						"transito",
+						"semanaTipica"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transporte Publico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{secret}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apitransporte.buenosaires.gob.ar/movilidad/transportePublico",
+					"protocol": "https",
+					"host": [
+						"apitransporte",
+						"buenosaires",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"movilidad",
+						"transportePublico"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transporte publico Mensual",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{secret}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apitransporte.buenosaires.gob.ar/movilidad/transportePublico/mensual",
+					"protocol": "https",
+					"host": [
+						"apitransporte",
+						"buenosaires",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"movilidad",
+						"transportePublico",
+						"mensual"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transporte Publico Mensual x Año",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{secret}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apitransporte.buenosaires.gob.ar/movilidad/transportePublico/mensual/{anioMes}",
+					"protocol": "https",
+					"host": [
+						"apitransporte",
+						"buenosaires",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"movilidad",
+						"transportePublico",
+						"mensual",
+						"{anioMes}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transporte Publico Semana Tipica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "{{id}}",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "{{secret}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://apitransporte.buenosaires.gob.ar/movilidad/transportePublico/semanaTipica",
+					"protocol": "https",
+					"host": [
+						"apitransporte",
+						"buenosaires",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"movilidad",
+						"transportePublico",
+						"semanaTipica"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "secret",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

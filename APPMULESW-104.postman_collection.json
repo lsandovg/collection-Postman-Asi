@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "4c8164c2-6562-4f38-a817-16fb8567e9f0",
+		"name": "APPMULESW-104",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22121481"
+	},
+	"item": [
+		{
+			"name": "gde-token-process-api/token",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"//https://servicios-qa.gcba.gob.ar/api/gde-token-process-api/token\r",
+							"//client_id: fcab7b53093a4d36b1bab8329292dfad\r",
+							"//Client Secret: 6587e677C21e4b73a271A3179C129C6b\r",
+							"//username:2020100400\r",
+							"//password:123456"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "fcab7b53093a4d36b1bab8329292dfa",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "client_secret",
+						"value": "6587e677C21e4b73a271A3179C129C6b",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"20201004001\",\r\n  \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://servicios-qa.gcba.gob.ar/api/gde-token-process-api/token",
+					"protocol": "https",
+					"host": [
+						"servicios-qa",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"api",
+						"gde-token-process-api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
