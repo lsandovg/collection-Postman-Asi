@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "5571c47c-45aa-474e-a4f6-1fc044b5b842",
+		"name": "APPIMPFUSE-169-Renaper-Personas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22121481"
+	},
+	"item": [
+		{
+			"name": "RETORNA-EJEMPLAR-DNI",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var data = JSON.parse(responseBody);\r",
+							"\r",
+							"const JsonData= pm.response.json();\r",
+							"pm.test(\"Tipos de respuesta esperado\",()=>{\r",
+							"    pm.expect(JsonData).to.be.an(\"object\");\r",
+							"    pm.expect(JsonData.numero).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.genero).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.nombre).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.apellido).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.fechaNacimiento).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.ejemplar).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.vencimiento).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.emision).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.cuil).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.calle).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.numeroCalle).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.piso).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.departamento).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.cpostal).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.ciudad).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.municipio).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.provincia).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.pais).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.nacionalidad).to.be.a(\"string\");\r",
+							"    pm.expect(JsonData.paisNacimiento).to.be.a(\"string\");\r",
+							"\r",
+							"})\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"//URL= renaper-personas-api-arquitectura-fuse-qa.apps.ocp4-dev.gcba.gob.ar/api\r",
+							"\r",
+							"//Casos Prueba:\r",
+							"\r",
+							"//1- {{renaper}}/{dni}/{sexo}/ejemplares/{tramite} (Retorna Ejemplar del DNI de una Persona).\r",
+							"\r",
+							"\r",
+							"//2-{{renaper}}/{dni}/{sexo}/ejemplares/ultimo (Retorna el Ultimo Ejemeplar del DNI de una Persona).\r",
+							"\r",
+							"\r",
+							"//3-{{renaper}}/personas/consulta\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{renaper}}/api/personas/95760408/M/ejemplares/00697613412",
+					"host": [
+						"{{renaper}}"
+					],
+					"path": [
+						"api",
+						"personas",
+						"95760408",
+						"M",
+						"ejemplares",
+						"00697613412"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RETORNA-EJEMPLAR-DNI-ULTIMO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"const JsonData= pm.response.json();\r",
+							"pm.test(\"Tipos de respuesta esperado\",()=>{\r",
+							"    pm.expect(JsonData).to.be.an(\"object\");\r",
+							"     pm.expect(JsonData.idtramiteprincipal).to.be.an(\"number\");\r",
+							"     pm.expect(JsonData.idtramitetarjetareimpresa).to.be.an(\"number\"); \r",
+							"     pm.expect(JsonData.ejemplar).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.vencimiento).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.emision).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.apellido).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.nombres).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.fechaNacimiento).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.cuil).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.calle).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.numero).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.piso).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.departamento).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.cpostal).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.barrio).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.monoblock).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.ciudad).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.municipio).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.provincia).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.pais).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.codigoError).to.be.an(\"number\");\r",
+							"     pm.expect(JsonData.codigof).to.be.an(\"number\");\r",
+							"     pm.expect(JsonData.mensaf).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.origenf).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.fechaf).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.idciudadano).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.nroError).to.be.an(\"number\");\r",
+							"     pm.expect(JsonData.descripcionError).to.be.a(\"string\");\r",
+							"\r",
+							"\r",
+							"\r",
+							"     \r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{renaper}}/api/personas/95760408/M/ejemplares/ultimo",
+					"host": [
+						"{{renaper}}"
+					],
+					"path": [
+						"api",
+						"personas",
+						"95760408",
+						"M",
+						"ejemplares",
+						"ultimo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PERSONAS-CONSULTAS.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const JsonData= pm.response.json();\r",
+							"pm.test(\"Tipos de respuesta esperado\",()=>{\r",
+							"    pm.expect(JsonData).to.be.an(\"object\");\r",
+							"     pm.expect(JsonData.apellido).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.nombres).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.fechaNacimiento).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.codigoError).to.be.an(\"number\");\r",
+							"     pm.expect(JsonData.codigof).to.be.a(\"number\");\r",
+							"     pm.expect(JsonData.apellido).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.apellido).to.be.a(\"string\");\r",
+							"     pm.expect(JsonData.apellido).to.be.a(\"string\");\r",
+							"\r",
+							"     \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dni\": 95760408,\r\n  \"sexo\": \"M\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{renaper}}/api/personas/consulta",
+					"host": [
+						"{{renaper}}"
+					],
+					"path": [
+						"api",
+						"personas",
+						"consulta"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
