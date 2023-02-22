@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "bfc6ff5d-4c8a-4634-b5f1-3d3a4d2577c7",
+		"name": "GDE Medico de cabecera - HML",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22121481"
+	},
+	"item": [
+		{
+			"name": "1-Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData= JSON.parse(responseBody);\r",
+							"console.log(jsonData)\r",
+							"//postman.setEnvironmentVariable(\"access_token:\",jsonData.acces_token)\r",
+							"postman.setEnvironmentVariable(\"access_token\",jsonData.access_token)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "boti_app_user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "5cGNpsXaXSWn8nTo6BmetZFgqaaW8fyMUxURpgCH",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "EFdevpy5YDkUryDbkNaGmiBGiSMNyUvh8e14qO5AHsydcCyL7t9UivvQo9KnZnWeGyE32lHB78fuMuDQ5FRGcKeADT0sjYqQJQSqEzXlvomBmvZkSNWdBlE8vKSMU47N",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://sigehos-hml.gcba.gob.ar/oauth2/access_token/",
+					"protocol": "https",
+					"host": [
+						"sigehos-hml",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"oauth2",
+						"access_token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Turnos disponibles medico cabecera por paciente",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://hishml.gcba.gob.ar/wssGestorDeEncuentros/api/external/turnos/medicoscabecera/paciente/2632293?fechaHastaDias=10",
+					"protocol": "https",
+					"host": [
+						"hishml",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"wssGestorDeEncuentros",
+						"api",
+						"external",
+						"turnos",
+						"medicoscabecera",
+						"paciente",
+						"2632293"
+					],
+					"query": [
+						{
+							"key": "fechaHastaDias",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6-Chatbot / Dar turno consulta",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"     //para estres es necesario cambiar la hora como parametro para poder realizar la consulta de dar turno//\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData= JSON.parse(responseBody);\r",
+							"console.log(jsonData)\r",
+							"//postman.setEnvironmentVariable(\"access_token:\",jsonData.acces_token)\r",
+							"postman.setEnvironmentVariable(\"idReserva\",jsonData.idReserva)\r",
+							"\r",
+							"postman.setEnvironmentVariable(\"idEfector\",jsonData.idEfector)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fechaTurno\": \"02/10/2023 10:56:00\",\r\n    \"idAtencion\":300684,\r\n    \"usuario\": 1485,\r\n    \"idHorario\":504578,\r\n    \"idPaciente\": 270637,\r\n    \"idPrograma\":\"\",\r\n    \"idPlan\":\"\",\r\n    \"idAfiliado\":\"\",\r\n    \"observacion\":\"prueba endpoint autogestion\",\r\n    \"modoAtencion\":\"PR\",\r\n    \"idEfector\":26\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hishml.gcba.gob.ar/wssGestorDeEncuentros/api/chatbot/darTurnoConsulta",
+					"protocol": "https",
+					"host": [
+						"hishml",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"wssGestorDeEncuentros",
+						"api",
+						"chatbot",
+						"darTurnoConsulta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancelar Turno",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "h8aKkGIwLC0sE4vb1MSYqevDjKLG8l"
+					}
+				],
+				"url": {
+					"raw": "https://hishml.gcba.gob.ar/wssGestorDeEncuentros/api/chatbot/reservas/1034438/cancelar/efector/26",
+					"protocol": "https",
+					"host": [
+						"hishml",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"wssGestorDeEncuentros",
+						"api",
+						"chatbot",
+						"reservas",
+						"1034438",
+						"cancelar",
+						"efector",
+						"26"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "8- HISDEV - Cancelar Turno",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{tokenSigehosHML}}"
+							}
+						],
+						"url": {
+							"raw": "https://hisdev.gcba.gob.ar/wssGestorDeEncuentros/api/chatbot/reservas/8421/cancelar",
+							"protocol": "https",
+							"host": [
+								"hisdev",
+								"gcba",
+								"gob",
+								"ar"
+							],
+							"path": [
+								"wssGestorDeEncuentros",
+								"api",
+								"chatbot",
+								"reservas",
+								"8421",
+								"cancelar"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Mar 2021 15:25:33 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "\"Se cancelo correctamente la reserva : 8421\""
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "696f5a21-2e04-4cde-aeb2-2c08a67f6149",
+		"name": "GDE Mis_Profesionales - HML",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14712757"
+	},
+	"item": [
+		{
+			"name": "1- Login Sigehos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "dlovito@buenosaires.gob.ar",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "2c947d53e5a857e1805f",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "6b46cb5fe78a9d811e8b2b93b95d2562d3a4fc40",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://sigehos-hml.gcba.gob.ar/oauth2/access_token/",
+					"protocol": "https",
+					"host": [
+						"sigehos-hml",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"oauth2",
+						"access_token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mis medicos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Fdkn7B9aCkLzy1DoSciwjVgyrfGuV9"
+					}
+				],
+				"url": {
+					"raw": "https://hishml.gcba.gob.ar/wssGestorDeEncuentros/api/chatbot/turnos/profesional/2646909",
+					"protocol": "https",
+					"host": [
+						"hishml",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"wssGestorDeEncuentros",
+						"api",
+						"chatbot",
+						"turnos",
+						"profesional",
+						"2646909"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login sigesan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"BRIGEgIBHT4HEAIPHAA=\",\r\n    \"clave\": \"BRIGEgIBHU8HEAIPHAA=\",\r\n    \"codDominio\": \"2.16.840.1.113883.2.10.27\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hishml.gcba.gob.ar/masterfile-dominio-service/api/usuarios/aplicacion/login",
+					"protocol": "https",
+					"host": [
+						"hishml",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"masterfile-dominio-service",
+						"api",
+						"usuarios",
+						"aplicacion",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agenda Medico",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJVU1VBUklPX1RVUk5PUyIsInRpbWVUb0xpdmVMYXBzZSI6OTAwMDAwLCJjcmVhdGVkIjoxNjc1Nzc1NzE0NDQ5LCJpc3MiOiJob3NwaXRhbGl0YWxpYW5vLm9yZy5hciIsImV4cGlyYXRpb25MYXBzZSI6MjcwMDAwMCwiZXhwIjoxNjc1Nzc4NDE0LCJ1c2VySWQiOjQsImlhdCI6MTY3NTc3NTcxNCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiIsIlJPTEVfVklFVyJdLCJjb2REb21pbmlvIjoiMi4xNi44NDAuMS4xMTM4ODMuMi4xMC4yNyJ9.nuXjy19l6RpsTtC9w9RMeXIJQqvowDSeqLcp559yjS-49QY9sjtw58xdn7y6edAsQHpzyXNEs2t4WVmYMkav4A"
+					}
+				],
+				"url": {
+					"raw": "https://hishml.gcba.gob.ar/wssGestorDeEncuentros/api/service/mi_agenda_turnos?idProfesional=39529",
+					"protocol": "https",
+					"host": [
+						"hishml",
+						"gcba",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"wssGestorDeEncuentros",
+						"api",
+						"service",
+						"mi_agenda_turnos"
+					],
+					"query": [
+						{
+							"key": "idProfesional",
+							"value": "39529"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
